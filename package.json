@@ -17,7 +17,9 @@
   "homepage": "https://github.com/borat55/wetube#readme",
   "dependencies": {
     "express": "^4.17.2",
-    "morgan": "^1.10.0"
+    "mongoose": "^6.2.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",

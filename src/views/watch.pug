@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+    if video.views === 1
+        h3 #{video.views} view
+    else
+        h3 #{video.views} views
+    h3 #{video.comments} #{video.comments === 1 ? "comment" : "comments"}
+    a(href=`${video.id}/edit`) Edit Video &rarr;

@@ -1,0 +1,7 @@
+extends base
+
+block content
+    h3 hello from Upload!
+    form(method="POST")
+        input(name="title", placeholder="Title", required, type="text")
+        input(type="submit", value="Upload Video")
