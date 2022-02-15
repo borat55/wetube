@@ -7,7 +7,7 @@
     "url": "git+https://github.com/borat55/wetube.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "author": "Boram Kim<boram8655@gmail.com>",
   "license": "MIT",
