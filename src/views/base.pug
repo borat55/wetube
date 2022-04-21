@@ -10,22 +10,23 @@ html(lang="ko")
             ul
                 li
                     a(href="/") Home
+                li
+                    a(href="/search") Search
                 if loggedIn
+                    li
+                        a(href="/videos/upload") Upload Video
+                    li
+                        a(href=`/users/${loggedInUser._id}`) #{loggedInUser.name}의 프로파일
                     li 
                         a(href="/users/edit-profile") Edit Profile
                     li
                         a(href="/users/logout") Logout
-                    li
-                        a(href="/my-profile") #{loggedInUser.name}의 프로파일
-                    li
-                        a(href="/videos/upload") Upload Video
                 else
                     li
                         a(href="/join") Join
                     li
                         a(href="/login") Login
-                li
-                    a(href="/search") Search
+
 
     main
         block content
