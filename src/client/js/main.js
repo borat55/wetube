@@ -1,3 +1,3 @@
 import "../scss/styles.scss"
 
-alert("It is done now!")
+console.log("workding on scss")
