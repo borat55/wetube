@@ -112,6 +112,13 @@ const handlePlayControlWKeyboard = (event) => {
     }
 }
 
+const handleVideoEnded = () => {
+    const {id} = videoContainer.dataset
+    fetch(`/api/videos/${id}/view`, {
+        method: "POST",
+    })
+}
+
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", hangleVolumeChange);
@@ -122,4 +129,5 @@ fullScreen.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("mousemove", handleMouseMose);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 video.addEventListener("click", handlePlayControlWMouseClick);
-document.addEventListener("keydown", handlePlayControlWKeyboard)
+document.addEventListener("keydown", handlePlayControlWKeyboard);
+video.addEventListener("ended", handleVideoEnded)
