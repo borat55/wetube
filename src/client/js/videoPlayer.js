@@ -68,7 +68,7 @@ const handleFullscreen = () => {
     const fullscreen = document.fullscreenElement;
     if (fullscreen) {
         document.exitFullscreen();
-        fullScreenIcon.classList = "fas fa-expend";
+        fullScreenIcon.classList = "fas fa-expand";
     } else{
         videoContainer.requestFullscreen();
         fullScreenIcon.classList = "fas fa-compress";
