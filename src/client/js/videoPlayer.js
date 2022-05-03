@@ -94,6 +94,24 @@ const handleMouseLeave = () => {
     controlsTimeout = setTimeout(hideControls, 3000);
 }
 
+const handlePlayControlWMouseClick = () => {
+    if(video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+const handlePlayControlWKeyboard = (event) => {
+    if (event.code === "Space") {
+        if(video.paused) {
+            video.play()
+        } else{
+            video.pause()
+        }
+    }
+}
+
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", hangleVolumeChange);
@@ -103,3 +121,5 @@ timeline.addEventListener("input", handleTimelineChange);
 fullScreen.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("mousemove", handleMouseMose);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
+video.addEventListener("click", handlePlayControlWMouseClick);
+document.addEventListener("keydown", handlePlayControlWKeyboard)
