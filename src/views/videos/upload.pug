@@ -1,7 +1,10 @@
 extends ../base
 
 block content
-    h3 hello from Upload!
+    div 
+        video#preview
+        button#startBtn Start Recording 
+
     form(method="POST", enctype="multipart/form-data")
         label(for="video") Video File
         input(type="file", accept="video/*", required, id="video", name="video")
@@ -9,3 +12,6 @@ block content
         input(placeholder="Description", required, type="text", name="description")
         input(placeholder="Hashtags, separated by comma.", required, type="text", name="hashtags")
         input(type="submit", value="Upload Video")
+
+    block scripts
+        script(src="/static/js/recorder.js") 
