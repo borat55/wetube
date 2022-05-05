@@ -100,6 +100,7 @@ const handlePlayControlWMouseClick = () => {
     } else {
         video.pause();
     }
+    playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
 }
 
 const handlePlayControlWKeyboard = (event) => {
@@ -109,8 +110,10 @@ const handlePlayControlWKeyboard = (event) => {
         } else{
             video.pause()
         }
+        playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
     }
 }
+
 
 const handleVideoEnded = () => {
     const {id} = videoContainer.dataset
