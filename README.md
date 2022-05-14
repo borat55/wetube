@@ -1,7 +1,7 @@
 #Wetube Reloaded
 
 / -> Home
-/join -> JOin
+/join -> Join
 /login -> Login
 /search -> Search
 
