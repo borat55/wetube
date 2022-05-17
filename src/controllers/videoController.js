@@ -9,7 +9,6 @@ export const home = async (req, res) => {
 export const watch = async(req, res) => {
     const { id } = req.params;
     const video = await Video.findById(id).populate("owner");
-    console.log(video)
     if (!video) {
         return res.status(404).render("404", {pageTitle: `Error: Video not found`})
     }
@@ -24,6 +23,7 @@ export const getEdit = async(req, res) => {
         return res.status(404).render("404", {pageTitle: `Error: Video not found`})
     }
     if (String(video.owner) !== String(_id)) {
+        req.flash("error", "Not authorized.")
         return res.status(403).redirect("/");
     }
     return res.render("videos/edit", { pageTitle: `Edit: ${video.title}`, video })
@@ -32,12 +32,13 @@ export const getEdit = async(req, res) => {
 export const postEdit = async(req, res) => {
     const { id } = req.params;
     const { user: {_id} } = req.session
-    const video = await Video.exists({ _id: id });
-    const { title, description, hashtags } = req.body
+    const video = await Video.findById({ _id: id });
+    const { title, description, hashtags } = req.body;
     if (!video) {
         return res.status(404).render("404", {pageTitle: `Error: Video not found`})
     }
     if (String(video.owner) !== String(_id)) {
+        req.flash("error", "You are not the owner of the video.")
         return res.status(403).redirect("/");
     }
     await Video.findByIdAndUpdate(id, {
@@ -106,6 +107,7 @@ export const deleteVideo = async(req, res) => {
         return res.status(403).redirect("/");
     }
     await Video.findByIdAndDelete(id);
+    req.flash("info", `You have deleted ${video.title} video`)
     return res.redirect("/")
 }
 
