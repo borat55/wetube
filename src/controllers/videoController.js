@@ -65,9 +65,10 @@ export const postUpload = async(req, res) => {
     //         title, description, hashtags
     //     }
     // } = req;
+
     const videoUrl = video[0].path;
-    const thumbUrl = thumb[0].path
-    console.log(videoUrl, thumbUrl)
+    const thumbUrl = thumb[0].path;
+
     try {
         const newVideo = await Video.create({
             title,
@@ -83,7 +84,6 @@ export const postUpload = async(req, res) => {
             }
         });
         const user = await User.findById(_id);
-        console.log(typeof user)
         user.videos.push(newVideo._id);
         user.save()
         return res.redirect("/");
@@ -98,7 +98,7 @@ export const postUpload = async(req, res) => {
 export const deleteVideo = async(req, res) => {
     const { id } = req.params;
     const { user: {_id} } = req.session
-    const video = await VideolfindBYId(id);
+    const video = await Video.findById(id);
     if (!video) {
         return res.status(404).render("404", {pageTitle: `Error: Video not found`})
     }
