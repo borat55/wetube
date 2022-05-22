@@ -11,6 +11,7 @@ const fullScreen = document.getElementById("fullScreen");
 const fullScreenIcon = fullScreen.querySelector("i");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
+const textarea = document.querySelector("textarea");
 
 let controlsTimeout = null;
 let controlsMovementTimeout = null;
@@ -104,7 +105,9 @@ const handlePlayControlWMouseClick = () => {
 }
 
 const handlePlayControlWKeyboard = (event) => {
-    if (event.code === "Space") {
+    console.log(event)
+    console.log(event.target)
+    if (event.code === "Space" && event.target !== textarea) {
         if(video.paused) {
             video.play()
         } else{
