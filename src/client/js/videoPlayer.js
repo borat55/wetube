@@ -105,8 +105,6 @@ const handlePlayControlWMouseClick = () => {
 }
 
 const handlePlayControlWKeyboard = (event) => {
-    console.log(event)
-    console.log(event.target)
     if (event.code === "Space" && event.target !== textarea) {
         if(video.paused) {
             video.play()
