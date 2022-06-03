@@ -38,10 +38,10 @@ block content
                 textarea(cols="30", rows="10", placeholder="Write a nice commment...")
                 button Add Comment
     div.video__comments
-        ul
+        ul#commentList
             each comment in video.comments.reverse()
-                li.video__comment
-                    i.fas.fa-comment
+                li.video__comment(data-id=comment.id)
+                    span ↳   
                     span #{comment.text}
                     if String(comment.owner._id) === String(loggedInUser._id)
                         span ❌
