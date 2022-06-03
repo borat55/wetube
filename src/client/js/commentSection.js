@@ -55,7 +55,6 @@ const handleSubmit = async(event) => {
 }
 
 const init = () => {
-
     form.addEventListener("submit", handleSubmit);
     commentDeleteBtns.forEach(btn => btn.addEventListener("click", handleDelComment));
 };
@@ -63,4 +62,3 @@ const init = () => {
 if (form) {
     init();
 }
-

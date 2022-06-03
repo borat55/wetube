@@ -7,6 +7,8 @@
     "url": "git+https://github.com/borat55/wetube.git"
   },
   "scripts": {
+    "start": "node build/init.js",
+    "build:server": "babel src -d build",
     "dev:server": "nodemon",
     "dev:assets": "webpack"
   },
@@ -31,7 +33,8 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.2",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.5",
