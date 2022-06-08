@@ -4,6 +4,11 @@
         border-radius: 7px;
         width: 100%;
         background-color: ivory;
+        .video__thumb_img {
+            height:100%;
+            border-radius: 7px;
+            width: 100%;
+        }
     }
     .video-mixin__data{
         padding:0px 15px;
