@@ -23,6 +23,7 @@
   "dependencies": {
     "@ffmpeg/core": "^0.8.5",
     "@ffmpeg/ffmpeg": "^0.9.7",
+    "aws-sdk": "~2.895.0",
     "bcrypt": "^5.0.1",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.0",
@@ -31,7 +32,8 @@
     "express-session": "^1.17.2",
     "mongoose": "^6.2.1",
     "morgan": "^1.10.0",
-    "multer": "^1.4.4",
+    "multer": "~1.4.2",
+    "multer-s3": "~2.9.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
@@ -51,6 +53,6 @@
   },
   "engines": {
     "node": "14.x",
-    "npm" : "6.x"
+    "npm": "6.x"
   }
 }
