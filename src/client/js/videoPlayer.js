@@ -51,9 +51,12 @@ const formatTime = (seconds) =>
     new Date(seconds * 1000).toISOString().substr(14, 5);
 
 const handleLoadedMetadata = () => {
-    console.log(video.duration)
-    totalTime.innerText = formatTime(Math.floor(video.duration));
-    timeline.max = Math.floor(video.duration);
+    if (!isNaN(video.duration)) {
+        console.log(video.duration)
+        totalTime.innerText = formatTime(Math.floor(video.duration));
+        console.log(totalTime.innerText)
+        timeline.max = Math.floor(video.duration);
+    }
 }
 
 const handleTimeUpdate =() => {
@@ -123,6 +126,8 @@ const handleVideoEnded = () => {
         method: "POST",
     })
 }
+
+handleLoadedMetadata()
 
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
