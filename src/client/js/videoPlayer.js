@@ -51,6 +51,7 @@ const formatTime = (seconds) =>
     new Date(seconds * 1000).toISOString().substr(14, 5);
 
 const handleLoadedMetadata = () => {
+    console.log(video.duration)
     totalTime.innerText = formatTime(Math.floor(video.duration));
     timeline.max = Math.floor(video.duration);
 }
