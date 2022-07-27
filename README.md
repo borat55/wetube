@@ -1,6 +1,5 @@
 #Wetube Reloaded   
-Deployed from Heroku   
-(https://wetube-br.herokuapp.com/)    
+Deployed from Heroku     
 
 / -> Home  
 /join -> Join  
